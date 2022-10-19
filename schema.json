@@ -1,0 +1,107 @@
+{
+  "type": "datasource",
+  "metadata": {},
+  "schema": {
+    "docs": "https://stripe.com/docs/api/sources?lang=node",
+    "friendlyName": "Stripe sources",
+    "type": "API",
+    "description": "Performs CRUD operations for Stripe sources",
+    "datasource": {
+      "apiKey": {
+        "type": "password",
+        "required": true
+      }
+    },
+    "query": {
+      "create": {
+        "type": "fields",
+        "fields": {
+          "type": {
+            "type": "string",
+            "required": true
+          },
+          "amount": {
+            "type": "number",
+            "required": false
+          },
+          "currency": {
+            "type": "string",
+            "required": false
+          },
+          "metadata": {
+            "type": "object",
+            "required": false
+          },
+          "owner": {
+            "type": "object",
+            "required": false
+          },
+          "redirect": {
+            "type": "object",
+            "required": false
+          },
+          "statementDescriptor": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      "read": {
+        "type": "fields",
+        "fields": {
+          "id": {
+            "type": "string",
+            "required": true
+          }
+        }
+      },
+      "update": {
+        "type": "fields",
+        "fields": {
+          "id": {
+            "type": "string",
+            "required": true
+          },
+          "amount": {
+            "type": "number",
+            "required": false
+          },
+          "metadata": {
+            "type": "object",
+            "required": false
+          },
+          "owner": {
+            "type": "object",
+            "required": false
+          }
+        }
+      },
+      "attach": {
+        "type": "fields",
+        "fields": {
+          "customer": {
+            "type": "string",
+            "required": true
+          },
+          "source": {
+            "type": "string",
+            "required": true
+          }
+        }
+      },
+      "detach": {
+        "type": "fields",
+        "fields": {
+          "customer": {
+            "type": "string",
+            "required": true
+          },
+          "source": {
+            "type": "string",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}
